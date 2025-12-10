@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Basket</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/basket.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Math&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+    <!-- Navbar -->
+    <header class="navbar">
+      <a href="../main.html" class="main-btn">LOGO</a>
+      <nav>
+        <a href="Shop.html" class="Shop-btn">Shop</a>
+        <a href="Support.html" class="support-btn">Support us</a>
+        <a href="register.html" class="register-btn">register</a>
+        <a href="Login.html" class="login-btn">Login</a>
+        
+      </nav>
+      <!-- Profile Icon -->
+      <div id="profile-container" class="profile-container">
+        <div class="profile-icon">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="profile-dropdown">
+          <div class="profile-dropdown-header">
+            <div class="profile-name">User</div>
+            <div class="profile-email">user@example.com</div>
+          </div>
+          <ul class="profile-dropdown-menu">
+            <li><a href="#"><i class="fas fa-user-circle"></i> Profile</a></li>
+            <li><a href="basket.html"><i class="fas fa-shopping-basket"></i> Basket</a></li>
+            <li><a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="navbar-container">
+        <button class="navbar-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul class="navbar-menu">
+          <li><a href="Shop.html" class="Shop-btn-menu">Shop</a></li>
+          <li><a href="Support.html" class="support-btn-menu">Support us</a></li>
+          <li><a href="register.html" class="register-btn-menu">register</a></li>
+          <li><a href="Login.html" class="login-btn-menu">Login</a></li>
+          
+          <li id="mobile-profile-container"></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="basket-container">
+        <h1>Your Wishlist</h1>
+        
+        <div id="wishlist-empty" class="empty-state">
+            <i class="fas fa-shopping-basket fa-3x"></i>
+            <h2>Your wishlist is empty</h2>
+            <p>Add some courses to your wishlist to see them here!</p>
+            <a href="Shop.html" class="continue-shopping-btn">Continue Shopping</a>
+        </div>
+        
+        <div id="wishlist-items" class="wishlist-items" style="display: none;">
+            <div class="wishlist-header">
+                <span>Course</span>
+                <span>Price</span>
+                <span>Action</span>
+            </div>
+            <div id="wishlist-content">
+                <!-- Wishlist items will be dynamically inserted here -->
+            </div>
+            
+            <div class="wishlist-summary">
+                <div class="total-price">
+                    <span>Total: $<span id="total-price">0</span></span>
+                </div>
+                <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/session.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/javascript.js"></script>
+    <script src="js/basket.js"></script>
+</body>
+</html>

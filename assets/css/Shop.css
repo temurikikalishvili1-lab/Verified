@@ -1,0 +1,149 @@
+/* Shop uses the same global styles as style.css */
+body {
+    background: linear-gradient(to bottom, #0a0f1f, #0a0d16);
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.shop-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 16px;
+}
+
+.main-btn{
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    transform: translateX(-20px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.shop-container h1 {
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 2.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: rgba(25, 30, 52, 0.73);
+    box-shadow: 0 4px 32px 0 rgba(23,85,206,0.22);
+    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 36px 18px 28px 18px;
+    min-height: 340px;
+    transition: box-shadow 0.25s, transform 0.16s;
+    backdrop-filter: blur(8px);
+}
+
+.card:hover {
+    box-shadow: 0 12px 40px rgba(76,175,239,0.17);
+    transform: translateY(-4px) scale(1.025);
+}
+
+.card-img img {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 18px;
+    border-radius: 14px;
+    object-fit: cover;
+    background: #222e52;
+    box-shadow: 0 1px 12px #0004;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.card-content h2 {
+    margin: 0 0 12px 0;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.card-content p {
+    margin-bottom: 16px;
+    color: #cce;
+    font-size: 16px;
+    opacity: 0.85;
+    font-weight: 400;
+}
+
+.card-price {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #57adee;
+    margin-top: 6px;
+    letter-spacing: 1px;
+    transform: translateX(55px);
+}
+
+/* Optional: make each card slightly different with an accent border */
+.card.uml    { border-top: 3.5px solid #7ec6e3; }
+.card.sql    { border-top: 3.5px solid #637efd; }
+.card.restapi{ border-top: 3.5px solid #26d5ad; }
+.card.redis  { border-top: 3.5px solid #f03f3f; }
+
+.buy-btn {
+    margin-top: 18px;
+    background: linear-gradient(90deg, #2186eb 0%, #1351a7 100%);
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 14px 36px;
+    border-radius: 34px;
+    font-size: 1.14rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 12px #1755ce44;
+    transition: background 0.22s, transform 0.12s, box-shadow 0.21s;
+    letter-spacing: .5px;
+    transform: translateY(65px) translateX(-25px);
+    
+}
+.buy-btn:hover {
+    background: linear-gradient(90deg, #23a8ff 0%, #0d47a1 100%);
+    transform: translateY(64px) scale(1.04);
+    box-shadow: 0 6px 24px #176ad455;
+}
+
+
+
+@media (max-width: 700px) {
+  .shop-container { padding-left: 4px; padding-right: 4px; }
+  .card-grid { gap: 14px; }
+  .card { padding: 22px 4px 16px 4px; }
+  .shop-container h1 { font-size: 1.22rem; }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 29px 40px;
+    position: sticky;
+    top: 0;
+    background: rgba(10, 15, 30, 0.4); 
+    backdrop-filter: blur(12px);        
+    -webkit-backdrop-filter: blur(12px); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    z-index: 999;
+}
