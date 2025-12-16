@@ -11,88 +11,92 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Math&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="stars"></div>
-    <!-- Navbar (copied from main.html)-->
-    <header class="navbar">
-      <a href="../main.html" class="main-btn">Curse</a>
-      <nav>
-        <a href="Shop.html" class="Shop-btn">Shop</a>
-        <a href="Support.html" class="support-btn">Support us</a>
-        <a href="register.html" class="register-btn">register</a>
-        <a href="Login.html" class="login-btn">Login</a>
-        
-      </nav>
-      <!-- Profile Icon -->
-      <div id="profile-container" class="profile-container">
-        <div class="profile-icon">
-          <i class="fas fa-user"></i>
-        </div>
-        <div class="profile-dropdown">
-          <div class="profile-dropdown-header">
-            <div class="profile-name">User</div>
-            <div class="profile-email">user@example.com</div>
-          </div>
-          <ul class="profile-dropdown-menu">
-            <li><a href="#"><i class="fas fa-user-circle"></i> Profile</a></li>
-            <li><a href="basket.html"><i class="fas fa-shopping-basket"></i> Basket</a></li>
-            <li><a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-          </ul>
-        </div>
+  <div class="stars"></div>
+  <!-- Navbar (copied from main.html)-->
+  <header class="navbar">
+    <!-- <a href="../main.html" class="main-btn">Curse</a> -->
+    <nav>
+      <a href="Shop.html" class="Shop-btn">Shop</a>
+      <a href="Support.html" class="support-btn">Support us</a>
+     <!-- <a href="register.html" class="register-btn">register</a>
+      <a href="Login.html" class="login-btn">Login</a> -->
+      
+    </nav>
+    <!-- Profile Icon -->
+    <div id="profile-container" class="profile-container">
+      <div class="profile-icon">
+        <i class="fas fa-user"></i>
       </div>
-      <div class="navbar-container">
-        <button class="navbar-toggle">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-        <ul class="navbar-menu">
-          <li><a href="Shop.html" class="Shop-btn-menu">Shop</a></li>
-          <li><a href="Support.html" class="support-btn-menu">Support us</a></li>
-          <li><a href="register.html" class="register-btn-menu">register</a></li>
-          <li><a href="Login.html" class="login-btn-menu">Login</a></li>
-          
-          <li id="mobile-profile-container"></li>
+      <div class="profile-dropdown">
+        <div class="profile-dropdown-header">
+          <div class="profile-name">User</div>
+          <div class="profile-email">user@example.com</div>
+        </div>
+        <ul class="profile-dropdown-menu">
+          <li><a href="#"><i class="fas fa-user-circle"></i> Profile</a></li>
+          <li><a href="basket.html"><i class="fas fa-shopping-basket"></i> Basket</a></li>
+          <li><a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
         </ul>
       </div>
-    </header>
+    </div>
+    <div class="navbar-container">
+      <button class="navbar-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="navbar-menu">
+        <li><a href="Shop.html" class="Shop-btn-menu">Shop</a></li>
+        <li><a href="Support.html" class="support-btn-menu">Support us</a></li>
+      <!--  <li><a href="register.html" class="register-btn-menu">register</a></li>
+        <li><a href="Login.html" class="login-btn-menu">Login</a></li> -->
+        
+        <li id="mobile-profile-container"></li>
+      </ul>
+    </div>
+  </header>
 
     <div class="shop-container">
-        <h1>ShopCurse</h1>
-        <div class="card-grid">
-            <div class="card uml" data-course-id="sql-course">
-                <div class="card-content">
-                    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-                    <stripe-pricing-table pricing-table-id="prctbl_1Scr4eIvC5nvXxvQpvtRyQSf"
-                    publishable-key="pk_live_51ScQFoIvC5nvXxvQFGEhShorFki73cBfarqCxCPZZwlmSLyoC3fi7JqOGD3Qv91qBt6JoAhE0VEhyXajYXb1iHx300kRTErj7z">
-                    </stripe-pricing-table>
-                </div>
-            </div>
-            <div class="card sql" data-course-id="gradient-course-1">
-                <div class="card-content">
-                    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-                    <stripe-pricing-table pricing-table-id="prctbl_1Scr75IvC5nvXxvQ65sxFVzt"
-                    publishable-key="pk_live_51ScQFoIvC5nvXxvQFGEhShorFki73cBfarqCxCPZZwlmSLyoC3fi7JqOGD3Qv91qBt6JoAhE0VEhyXajYXb1iHx300kRTErj7z">
-                    </stripe-pricing-table>
-                </div>
-            </div>
-            <div class="card restapi" data-course-id="gradient-course-2">
-                <div class="card-content">
-                    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-                    <stripe-pricing-table pricing-table-id="prctbl_1Scr8AIvC5nvXxvQCU2sLHDX"
-                    publishable-key="pk_live_51ScQFoIvC5nvXxvQFGEhShorFki73cBfarqCxCPZZwlmSLyoC3fi7JqOGD3Qv91qBt6JoAhE0VEhyXajYXb1iHx300kRTErj7z">
-                    </stripe-pricing-table>
-                </div>
-            </div>
-            <div class="card redis" data-course-id="gradient-course-3">
-                <div class="card-content">
-                    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-                    <stripe-pricing-table pricing-table-id="prctbl_1Scr8NIvC5nvXxvQKL5pfrtl"
-                    publishable-key="pk_live_51ScQFoIvC5nvXxvQFGEhShorFki73cBfarqCxCPZZwlmSLyoC3fi7JqOGD3Qv91qBt6JoAhE0VEhyXajYXb1iHx300kRTErj7z">
-                    </stripe-pricing-table>
-                </div>
-            </div>
-        </div>
-    </div>
+      <h1>Course Shop</h1>
+      <div class="card-grid">
+          <div class="card uml" data-course-id="sql-course">
+              <div class="card-img"><img src="images/sql.png" alt="UML"></div>
+              <div class="card-content">
+                  <h2>SQL</h2>
+                  <p></p>
+                  <span class="card-price">159.99$</span>
+                  <button class="buy-btn" data-course="sql">Buy</button>
+              </div>
+          </div>
+          <div class="card sql" data-course-id="gradient-course-1">
+              <div class="card-img"><img src="images/C-Sharp-Tutorials.png" alt="SQL API"></div>
+              <div class="card-content">
+                  <h2>Csharp</h2>
+                  <p></p>
+                  <span class="card-price">359.99$</span>
+                  <button class="buy-btn" data-course="gradient1">Buy</button>
+              </div>
+          </div>
+          <div class="card restapi" data-course-id="gradient-course-2">
+              <div class="card-img"><img src="images/pythoned.png" alt="REST API"></div>
+              <div class="card-content">
+                  <h2>Python</h2>
+                  <p></p>
+                  <span class="card-price">249.99$</span>
+                  <button class="buy-btn" data-course="gradient2">Buy</button>
+              </div>
+          </div>
+          <div class="card redis" data-course-id="gradient-course-3">
+              <div class="card-img"><img src="images/Unofficial_JavaScript_logo_2.svg.png" alt="Redis"></div>
+              <div class="card-content">
+                  <h2>JavaScrip</h2>
+                  <p></p>
+                  <span class="card-price">200.00$</span>
+                  <button class="buy-btn" data-course="gradient3">Buy</button>
+              </div>
+          </div>
+      </div>
+  </div>
     <script src="js/session.js"></script>
     <script src="js/profile.js"></script>
     <script src="js/javascript.js"></script>
