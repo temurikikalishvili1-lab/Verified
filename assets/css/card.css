@@ -258,32 +258,6 @@
     color: rgba(255, 255, 255, 0.5);
 }
 
-.stripe-card-element {
-    padding: 1rem;
-    border: 2px solid #512da8;
-    border-radius: 10px;
-    background: rgba(81, 45, 168, 0.2);
-    color: #fff;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-.stripe-card-element.StripeElement--focus {
-    border-color: #4cafef;
-    background: rgba(81, 45, 168, 0.35);
-    box-shadow: 0 0 10px rgba(76, 175, 239, 0.3);
-}
-
-.stripe-card-element.StripeElement--invalid {
-    border-color: #e74c3c;
-    box-shadow: 0 0 10px rgba(231, 76, 60, 0.35);
-}
-
-.stripe-card-element.StripeElement--complete {
-    border-color: #27ae60;
-    box-shadow: 0 0 10px rgba(39, 174, 96, 0.35);
-}
-
 .form-hint {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.85rem;

@@ -105,34 +105,42 @@
         // Add to wishlist functionality
         document.addEventListener('DOMContentLoaded', function() {
             const buyButtons = document.querySelectorAll('.buy-btn');
+            const saveWishlistItem = (item) => {
+                const wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+                const existingIndex = wishlist.findIndex((wishlistItem) => wishlistItem.id === item.id);
+                
+                if (existingIndex >= 0) {
+                    wishlist[existingIndex] = { ...wishlist[existingIndex], ...item };
+                } else {
+                    wishlist.push(item);
+                }
+                
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            };
             
             buyButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const card = this.closest('.card');
+                    if (!card) return;
+
                     const courseId = card.dataset.courseId;
-                    const title = card.querySelector('h2').textContent;
-                    const description = card.querySelector('p').textContent;
-                    const price = card.querySelector('.card-price').textContent;
-                    const image = card.querySelector('img').src;
-                    
+                    const title = card.querySelector('h2')?.textContent || '';
+                    const description = card.querySelector('p')?.textContent || '';
+                    const price = card.querySelector('.card-price')?.textContent || '';
+                    const image = card.querySelector('img')?.src || '';
+                    const wishlistItem = { id: courseId, title, description, price, image };
+
                     // Add to wishlist
                     if (window.basketManager) {
-                        window.basketManager.addToWishlist({
-                            id: courseId,
-                            title: title,
-                            description: description,
-                            price: price,
-                            image: image
-                        });
-                        
-                        // Redirect to basket page after a short delay
-                        setTimeout(() => {
-                            window.location.href = 'basket.html';
-                        }, 1000);
+                        window.basketManager.addToWishlist(wishlistItem);
                     } else {
-                        // Fallback: redirect to basket page
-                        window.location.href = 'basket.html';
+                        saveWishlistItem(wishlistItem);
                     }
+
+                    // Redirect to basket page after a short delay
+                    setTimeout(() => {
+                        window.location.href = 'basket.html';
+                    }, 500);
                 });
             });
         });

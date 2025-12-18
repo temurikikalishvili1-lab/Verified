@@ -14,12 +14,12 @@
     <div class="stars"></div>
     <!-- Navbar -->
     <header class="navbar">
-      <a href="../main.html" class="main-btn">LOGO</a>
+      <a href="../index.html" class="main-btn">ELSI</a>
       <nav>
         <a href="Shop.html" class="Shop-btn">Shop</a>
         <a href="Support.html" class="support-btn">Support us</a>
-        <a href="register.html" class="register-btn">register</a>
-        <a href="Login.html" class="login-btn">Login</a>
+      <!-- <a href="register.html" class="register-btn">register</a> -->
+      <!-- <a href="Login.html" class="login-btn">Login</a> -->
         
       </nav>
       <!-- Profile Icon -->
@@ -48,8 +48,8 @@
         <ul class="navbar-menu">
           <li><a href="Shop.html" class="Shop-btn-menu">Shop</a></li>
           <li><a href="Support.html" class="support-btn-menu">Support us</a></li>
-          <li><a href="register.html" class="register-btn-menu">register</a></li>
-          <li><a href="Login.html" class="login-btn-menu">Login</a></li>
+          <!-- <li><a href="register.html" class="register-btn-menu">register</a></li> -->
+          <!-- <li><a href="Login.html" class="login-btn-menu">Login</a></li> -->
           
           <li id="mobile-profile-container"></li>
         </ul>
@@ -71,26 +71,12 @@
 
         <div class="payment-form-container">
             <div class="accepted-cards">
-                <span class="accepted-cards-label">We accept:</span>
-                <div class="card-icons">
-                    <img src="images/visa.png" alt="Visa" class="card-icon">
-                    <img src="images/mastercard.png" alt="Mastercard" class="card-icon">
-                    <img src="images/american_express.png" alt="American Express" class="card-icon">
-                </div>
+                <span class="accepted-cards-label">You will be redirected to Bank of Georgia for secure payment.</span>
             </div>
             <form id="payment-form" class="payment-form">
                 <div class="form-group">
-                    <label>
-                        <i class="fas fa-credit-card"></i> Card details
-                    </label>
-                    <div id="card-element" class="stripe-card-element"></div>
-                    <div class="card-icon-display" id="card-icon-display"></div>
-                    <small class="form-hint">Secure card entry powered by Stripe</small>
-                </div>
-
-                <div class="form-group">
                     <label for="cardholder-name">
-                        <i class="fas fa-user"></i> Cardholder Name
+                        <i class="fas fa-user"></i> Payer Name
                     </label>
                     <input 
                         type="text" 
@@ -112,15 +98,15 @@
                         placeholder="customer@gmail.com"
                         required
                     >
-                    <small class="form-hint">Where we should send your receipt</small>
+                    <small class="form-hint">We use this to send your receipt.</small>
                 </div>
 
                 <div class="form-actions">
                     <button type="button" class="cancel-btn" onclick="window.location.href='basket.html'">
                         <i class="fas fa-arrow-left"></i> Back to Basket
                     </button>
-                    <button type="submit" class="pay-btn">
-                        <i class="fas fa-check"></i> Complete Purchase
+                    <button type="submit" class="pay-btn" id="bog-pay-btn">
+                        <i class="fas fa-university"></i> Pay with Bank of Georgia
                     </button>
                 </div>
             </form>
@@ -131,7 +117,6 @@
     <script src="js/profile.js"></script>
     <script src="js/javascript.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script src="https://js.stripe.com/v3/"></script>
     <script src="js/card.js"></script>
 </body>
 </html>

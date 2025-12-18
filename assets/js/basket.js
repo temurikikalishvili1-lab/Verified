@@ -20,16 +20,18 @@ class BasketManager {
     }
 
     addToWishlist(item) {
-        // Check if item already exists
-        const existingItem = this.wishlist.find(wishlistItem => wishlistItem.id === item.id);
-        if (!existingItem) {
+        // Ensure we always persist the latest details (price/image/title)
+        const existingIndex = this.wishlist.findIndex((wishlistItem) => wishlistItem.id === item.id);
+        if (existingIndex === -1) {
             this.wishlist.push(item);
-            this.saveWishlistToStorage();
-            this.displayWishlist();
             this.showNotification('Course added to wishlist!');
         } else {
-            this.showNotification('Course already in wishlist!');
+            this.wishlist[existingIndex] = { ...this.wishlist[existingIndex], ...item };
+            this.showNotification('Course updated in wishlist!');
         }
+
+        this.saveWishlistToStorage();
+        this.displayWishlist();
     }
 
     removeFromWishlist(itemId) {
