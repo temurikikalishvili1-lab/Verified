@@ -1,0 +1,30 @@
+{
+  "name": "new-web-project",
+  "version": "1.0.0",
+  "description": "A modern web application with dark theme and interactive elements",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js",
+    "build": "echo 'Build process would go here'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "web",
+    "html",
+    "css",
+    "javascript",
+    "dark-theme",
+    "responsive"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.22.1",
+    "font-awesome": "^4.7.0",
+    "sqlite3": "^5.1.7",
+    "bcrypt": "^5.1.1",
+    "express-session": "^1.17.3",
+    "dotenv": "^16.4.5"
+  }
+}
