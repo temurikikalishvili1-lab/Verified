@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Courses</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Shop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Math&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="stars"></div>
+  <!-- Navbar (copied from main.html)-->
+  <header class="navbar">
+    <!-- <a href="../main.html" class="main-btn">Curse</a> -->
+    <nav>
+      <a href="Shop.html" class="Shop-btn">Shop</a>
+      <a href="Support.html" class="support-btn">Support us</a>
+      <a href="register.html" class="register-btn">register</a>
+      <a href="Login.html" class="login-btn">Login</a>
+      
+    </nav>
+    <!-- Profile Icon -->
+    <div id="profile-container" class="profile-container">
+      <div class="profile-icon">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="profile-dropdown">
+        <div class="profile-dropdown-header">
+          <div class="profile-name">User</div>
+          <div class="profile-email">user@example.com</div>
+        </div>
+        <ul class="profile-dropdown-menu">
+          <li><a href="#"><i class="fas fa-user-circle"></i> Profile</a></li>
+          <li><a href="basket.html"><i class="fas fa-shopping-basket"></i> Basket</a></li>
+          <li><a href="login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="navbar-container">
+      <button class="navbar-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="navbar-menu">
+        <li><a href="Shop.html" class="Shop-btn-menu">Shop</a></li>
+        <li><a href="Support.html" class="support-btn-menu">Support us</a></li>
+        <li><a href="register.html" class="register-btn-menu">register</a></li>
+        <li><a href="Login.html" class="login-btn-menu">Login</a></li>
+        
+        <li id="mobile-profile-container"></li>
+      </ul>
+    </div>
+  </header>
+
+    <div class="shop-container">
+      <h1>Course Shop</h1>
+      <div class="card-grid">
+          <div class="card uml" data-course-id="sql-course">
+              <div class="card-img"><img src="images/dis.png" alt="UML"></div>
+              <div class="card-content">
+                  <h2>Iphone 17 pro max</h2>
+                  <p></p>
+                  <span class="card-price">1599.99$</span>
+                  <button class="buy-btn" data-course="sql">Buy</button>
+              </div>
+          </div>
+          <div class="card sql" data-course-id="gradient-course-1">
+              <div class="card-img"><img src="images/dro.png" alt="SQL API"></div>
+              <div class="card-content">
+                  <h2>macbook air m3</h2>
+                  <p></p>
+                  <span class="card-price">1999.99$</span>
+                  <button class="buy-btn" data-course="gradient1">Buy</button>
+              </div>
+          </div>
+          <div class="card restapi" data-course-id="gradient-course-2">
+              <div class="card-img"><img src="images/TV.png" alt="REST API"></div>
+              <div class="card-content">
+                  <h2>TV samsung 4k</h2>
+                  <p></p>
+                  <span class="card-price">1499.99$</span>
+                  <button class="buy-btn" data-course="gradient2">Buy</button>
+              </div>
+          </div>
+          <div class="card redis" data-course-id="gradient-course-3">
+              <div class="card-img"><img src="images/Samsung.png" alt="Redis"></div>
+              <div class="card-content">
+                  <h2>Samsung S25 ultra</h2>
+                  <p></p>
+                  <span class="card-price">2499.99$</span>
+                  <button class="buy-btn" data-course="gradient3">Buy</button>
+              </div>
+          </div>
+      </div>
+  </div>
+    <script src="js/session.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/javascript.js"></script>
+    <script src="js/basket.js"></script>
+    <script>
+        // Add to wishlist functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const buyButtons = document.querySelectorAll('.buy-btn');
+            const saveWishlistItem = (item) => {
+                const wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+                const existingIndex = wishlist.findIndex((wishlistItem) => wishlistItem.id === item.id);
+                
+                if (existingIndex >= 0) {
+                    wishlist[existingIndex] = { ...wishlist[existingIndex], ...item };
+                } else {
+                    wishlist.push(item);
+                }
+                
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            };
+            
+            buyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const card = this.closest('.card');
+                    if (!card) return;
+
+                    const courseId = card.dataset.courseId;
+                    const title = card.querySelector('h2')?.textContent || '';
+                    const description = card.querySelector('p')?.textContent || '';
+                    const price = card.querySelector('.card-price')?.textContent || '';
+                    const image = card.querySelector('img')?.src || '';
+                    const wishlistItem = { id: courseId, title, description, price, image };
+
+                    // Add to wishlist
+                    if (window.basketManager) {
+                        window.basketManager.addToWishlist(wishlistItem);
+                    } else {
+                        saveWishlistItem(wishlistItem);
+                    }
+
+                    // Redirect to basket page after a short delay
+                    setTimeout(() => {
+                        window.location.href = 'basket.html';
+                    }, 500);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Payment</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Math&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+    <!-- Navbar -->
+    <header class="navbar">
+      <a href="../index.html" class="main-btn">ELSI</a>
+      <nav>
+        <a href="Shop.html" class="Shop-btn">Shop</a>
+        <a href="Support.html" class="support-btn">Support us</a>
+        <a href="register.html" class="register-btn">register</a>
+        <a href="Login.html" class="login-btn">Login</a>
+        
+      </nav>
+      <!-- Profile Icon -->
+      <div id="profile-container" class="profile-container">
+        <div class="profile-icon">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="profile-dropdown">
+          <div class="profile-dropdown-header">
+            <div class="profile-name">User</div>
+            <div class="profile-email">user@example.com</div>
+          </div>
+          <ul class="profile-dropdown-menu">
+            <li><a href="#"><i class="fas fa-user-circle"></i> Profile</a></li>
+            <li><a href="basket.html"><i class="fas fa-shopping-basket"></i> Basket</a></li>
+            <li><a href="login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="navbar-container">
+        <button class="navbar-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <ul class="navbar-menu">
+          <li><a href="Shop.html" class="Shop-btn-menu">Shop</a></li>
+          <li><a href="Support.html" class="support-btn-menu">Support us</a></li>
+          <li><a href="register.html" class="register-btn-menu">register</a></li>
+          <li><a href="Login.html" class="login-btn-menu">Login</a></li>
+          
+          <li id="mobile-profile-container"></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="checkout-container">
+        <h1><i class="fas fa-credit-card"></i> Payment Information</h1>
+        
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div id="order-items">
+                <!-- Order items will be dynamically inserted here -->
+            </div>
+            <div class="order-total">
+                <span>Total: $<span id="order-total">0.00</span></span>
+            </div>
+        </div>
+
+        <div class="payment-form-container">
+            <div class="accepted-cards">
+                <span class="accepted-cards-label" id="payment-provider-label">You will be redirected to our payment provider for secure payment.</span>
+            </div>
+            <form id="payment-form" class="payment-form">
+                <div class="form-group">
+                    <label for="cardholder-name">
+                        <i class="fas fa-user"></i> Payer Name
+                    </label>
+                    <input 
+                        type="text" 
+                        id="cardholder-name" 
+                        name="cardholder-name" 
+                        placeholder="John Doe"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="customer-email">
+                        <i class="fas fa-envelope"></i> Receipt Email
+                    </label>
+                    <input 
+                        type="email" 
+                        id="customer-email" 
+                        name="customer-email" 
+                        placeholder="customer@gmail.com"
+                        required
+                    >
+                    <small class="form-hint">We use this to send your receipt.</small>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="window.location.href='basket.html'">
+                        <i class="fas fa-arrow-left"></i> Back to Basket
+                    </button>
+                    <button type="submit" class="pay-btn" id="bog-pay-btn">
+                        <i class="fas fa-university"></i> Pay with Bank of Georgia
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/session.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/javascript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="js/card.js"></script>
+</body>
+</html>
+
