@@ -61,9 +61,23 @@ class CheckoutManager {
         }
 
         if (providerLabel) {
-            providerLabel.textContent = enabled
-                ? `You will be redirected to ${providerName} for secure payment.`
-                : 'Payment is currently unavailable.';
+            if (enabled) {
+                providerLabel.textContent = `You will be redirected to ${providerName} for secure payment.`;
+                providerLabel.classList.remove('payment-status-wrapper');
+            } else {
+                providerLabel.innerHTML = `
+                    <label class="payment-status-checkbox">
+                        <input type="checkbox" aria-label="Agree to terms">
+                        <span>
+                            წავიკითხე და ვეთანხმები
+                            <a href="gacani.html" class="payment-status-link" tabindex="-1">სამომხმარებლო შეთანხმებას</a>
+                            და
+                            <a href="gaecani.html" class="payment-status-link" tabindex="-1">კონფიდენციალურობის პოლიტიკას</a>
+                        </span>
+                    </label>
+                `;
+                providerLabel.classList.add('payment-status-wrapper');
+            }
         }
     }
 

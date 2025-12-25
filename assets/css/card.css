@@ -149,6 +149,45 @@
     font-weight: bold;
 }
 
+.payment-status-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-status-checkbox {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.45rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.payment-status-checkbox input {
+    width: 14px;
+    height: 14px;
+    margin-top: 0.15rem;
+    accent-color: #a972ff;
+    cursor: pointer;
+}
+
+.payment-status-checkbox span {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.payment-status-link {
+    color: #a972ff;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.payment-status-link:focus-visible {
+    outline: 2px solid #a972ff;
+    outline-offset: 2px;
+}
+
 .card-icons {
     display: flex;
     align-items: center;
