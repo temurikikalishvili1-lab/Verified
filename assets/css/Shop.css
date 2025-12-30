@@ -104,10 +104,12 @@ body {
 /* Optional: make each card slightly different with an accent border */
 .card.uml    { border-top: 3.5px solid #7ec6e3; }
 .card.sql    { border-top: 3.5px solid #637efd; }
-.card.restapi{ border-top: 3.5px solid #26d5ad; }
+.card.restapi{ border-top: 3.5px solid #7226d5; }
 .card.redis  { border-top: 3.5px solid #f03f3f; }
 .card.red    { border-top: 3.5px solid #f0d03f; }
 .card.redg   { border-top: 3.5px solid #3ff0b5; }
+.card.redgi  { border-top: 3.5px solid #cd3ff0; }
+
 
 .buy-btn {
     margin-top: 18px;
