@@ -106,6 +106,8 @@ body {
 .card.sql    { border-top: 3.5px solid #637efd; }
 .card.restapi{ border-top: 3.5px solid #26d5ad; }
 .card.redis  { border-top: 3.5px solid #f03f3f; }
+.card.red    { border-top: 3.5px solid #f0d03f; }
+.card.redg   { border-top: 3.5px solid #3ff0b5; }
 
 .buy-btn {
     margin-top: 18px;
