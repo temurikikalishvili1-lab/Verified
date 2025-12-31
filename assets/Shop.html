@@ -174,7 +174,7 @@
     <script>
         // Add to wishlist functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const buyButtons = document.querySelectorAll('.buy-btn');
+            const buyButtons = document.querySelectorAll('.buy-btnn');
             const saveWishlistItem = (item) => {
                 const wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
                 const existingIndex = wishlist.findIndex((wishlistItem) => wishlistItem.id === item.id);
